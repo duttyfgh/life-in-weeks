@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html {
+    box-sizing: border-box;
+    font-size: calc(100vw / 1920 * 10);
+}
+
+@media (max-width: 1024px) {
+    html {
+        font-size: calc(100vw / 786 * 10);
+    }
+}
+
+@media (max-width: 767px) {
+    html {
+        font-size: calc(100vw / 500 * 10);
+    }
+}
+
+@media (max-width: 500) {
+    html {
+        font-size: calc(100vw / 360 * 10);
+    }
+}
+
+* {
+    font-size: 2rem;
+    transition: .2s ease-in-out;
+}
+
+.roboto {
+    font-family: "Roboto", sans-serif;
+    font-weight: 900;
+    font-style: normal;
+}
+
+.Border {
+    border: 1px solid #686868;
+}
+
+.checkbox.style-c {
+    display: inline-block;
+    position: relative;
+    padding-left: 3rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  .checkbox.style-c input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  .checkbox.style-c input:checked ~ .checkbox__checkmark {
+    background-color: #000000;
+  }
+  .checkbox.style-c input:checked ~ .checkbox__checkmark:after {
+    opacity: 1;
+  }
+  .checkbox.style-c:hover input ~ .checkbox__checkmark {
+    background-color: #eee;
+  }
+  .checkbox.style-c:hover input:checked ~ .checkbox__checkmark {
+    background-color: #000000;
+  }
+  .checkbox.style-c .checkbox__checkmark {
+    position: absolute;
+    top: 2px;
+    left: 0;
+    height: 2rem;
+    width: 2rem;
+    background-color: #eee;
+    transition: background-color 0.25s ease;
+    border-radius: 4px;
+  }
+  .checkbox.style-c .checkbox__checkmark:after {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 4px;
+    width: 5px;
+    height: 10px;
+    border: solid #ffffff;
+    border-width: 0 2px 2px 0;
+    transform: rotate(45deg);
+    opacity: 0;
+    transition: opacity 0.25s ease;
+  }
+  .checkbox.style-c .checkbox__body {
+    color: #ffffff;
+    line-height: 1.4;
+    font-size: 16px;
+  }
+  
