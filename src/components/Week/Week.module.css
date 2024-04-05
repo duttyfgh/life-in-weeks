@@ -30,9 +30,6 @@
         justify-content: center;
     }
 
-    .WeeksContainer {
-        margin-top: -4.5rem;
-    }
 }
 
 @media(max-width: 550px) {

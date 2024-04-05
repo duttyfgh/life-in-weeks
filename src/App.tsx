@@ -59,6 +59,12 @@ const App = () => {
     }
   }, [])
 
+  const forgetTheUser = () => {
+    setIsRememberedTheUser(false)
+    localStorage.removeItem('usersDateOfBorn')
+    setIsSetDate(false)
+  }
+
   //if date was changed i.e date set, it scroll to bottom
   useEffect(() => {
     if (isSetDate) {
@@ -74,7 +80,8 @@ const App = () => {
       <main>
         {isShowingPeriods && <InformationAboutPeriods />}
         <WeeksRows rows={rows} userWeeks={userWeeks} isShowingPeriods={isShowingPeriods} />
-        {isSetDate && <Buttons turnOnOfIsShowingPeriods={turnOnOfIsShowingPeriods} isShowingPeriods={isShowingPeriods} />}
+        {isSetDate &&
+         <Buttons turnOnOfIsShowingPeriods={turnOnOfIsShowingPeriods} isShowingPeriods={isShowingPeriods} forgetTheUser={forgetTheUser} />}
       </main>
 
       {isRememberedTheUser && isSetDate ||
