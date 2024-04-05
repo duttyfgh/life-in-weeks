@@ -6,7 +6,8 @@ interface ICountSundaysPassed {
     (startDate: Date): number;
 }
 
-const countSundaysPassed: ICountSundaysPassed = (startDate: Date) => {
+//count how much weeks left form the date
+export const countSundaysPassed: ICountSundaysPassed = (startDate: Date) => {
     const today = new Date()
     const millisecondsInDay = 1000 * 60 * 60 * 24
     const daysPassed = Math.floor((today.getTime() - startDate.getTime()) / millisecondsInDay)

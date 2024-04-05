@@ -1,0 +1,9 @@
+.ChoiceAge {
+    max-width: 520px;
+}
+
+@media(max-width: 440px) {
+    .ChoiceAge {
+        max-width: 320px;
+    }
+}

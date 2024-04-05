@@ -1,0 +1,65 @@
+.InformationAboutPeriodsContainer {
+    width: 23.3%;
+    display: flex;
+    justify-content: center;
+    height: 100vh;
+    flex-direction: column;
+    padding-left: 8rem;
+    gap: 1rem;
+}
+
+.block {
+    width: 6rem;
+    height: 6rem;
+}
+
+@media(max-width: 1024px) {
+    .InformationAboutPeriodsContainer {
+        flex-direction: row;
+        padding: 2rem;
+        align-items: center;
+        width: 100%;
+        height: auto;
+        flex-wrap: wrap;
+    }
+
+    .block {
+        width: 2rem;
+        height: 2rem;
+        border-radius: 50%;
+    }
+
+}
+
+@media(max-width: 786px) {
+    .InformationAboutPeriodsContainer {
+        padding-top: 8rem;
+        margin-bottom: -2rem;
+    }
+}
+
+@media(max-width: 550px) {
+    .InformationAboutPeriodsContainer {
+        padding-top: 4rem;
+        margin-bottom: -5rem;
+    }
+}
+
+@media(max-width: 470px) {
+    .InformationAboutPeriodsContainer {
+        margin-bottom: -10rem;
+    }
+}
+
+@media(max-width: 440px) {
+    .InformationAboutPeriodsContainer {
+        margin-bottom: -13rem;
+    }
+}
+
+@media(max-width: 400px) {
+    .InformationAboutPeriodsContainer {
+        margin-bottom: -20rem;
+        margin-top: 5rem;
+    }
+}

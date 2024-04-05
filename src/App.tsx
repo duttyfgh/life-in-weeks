@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react"
-import ChoiceAge from "./components/ChoiceAge"
-import Header from "./components/Header"
-import WeeksRows from "./components/WeeksRows"
-import { generateArray } from "./generateArray"
+import Buttons from "./components/Buttons/Buttons"
+import ChoiceAge from "./components/ChoiseAge/ChoiceAge"
+import Header from "./components/Header/Header"
+import InformationAboutPeriods from "./components/InformationAboutPeriods/InformationAboutPeriods"
+import WeeksRows from "./components/Week/WeeksRows"
+import { countSundaysPassed, generateArray } from "./generateArray"
 
 const App = () => {
   const [age, setAge] = useState<Date>(new Date())
   const [isSetDate, setIsSetDate] = useState(false)
   const [isRememberedTheUser, setIsRememberedTheUser] = useState<boolean>(!localStorage.getItem('usersDateOfBorn'))
+  const [isShowingPeriods, setIsShowingPeriods] = useState(false)
 
   const userDateOfBorn = localStorage.getItem('usersDateOfBorn')
   const rows = []
+  const userWeeks = countSundaysPassed(age)
 
   if (isSetDate) {
     const data = generateArray(age)
@@ -33,6 +37,18 @@ const App = () => {
     setIsRememberedTheUser(true)
   }
 
+  const turnOnOfIsShowingPeriods = () => {
+    setIsShowingPeriods(!isShowingPeriods)
+    scrollToBottom()
+  }
+
+  const scrollToBottom = () => {
+    window.scrollTo({
+      top: document.body.scrollHeight,
+      behavior: "smooth"
+    })
+  }
+
   //it's checking isRememberedTheUser and if it equal true this useEffect set age, isSetDate, isRememberedTheUser
   useEffect(() => {
     if (!isRememberedTheUser) {
@@ -46,18 +62,20 @@ const App = () => {
   //if date was changed i.e date set, it scroll to bottom
   useEffect(() => {
     if (isSetDate) {
-      window.scrollTo({
-        top: document.body.scrollHeight,
-        behavior: "smooth"
-      })
+      scrollToBottom()
     }
   }, [isSetDate])
+
 
   return (
     <div className={`h-screen ${isSetDate || 'overflow-hidden'}`}>
       <Header />
 
-      <WeeksRows rows={rows} />
+      <main>
+        {isShowingPeriods && <InformationAboutPeriods />}
+        <WeeksRows rows={rows} userWeeks={userWeeks} isShowingPeriods={isShowingPeriods} />
+        {isSetDate && <Buttons turnOnOfIsShowingPeriods={turnOnOfIsShowingPeriods} isShowingPeriods={isShowingPeriods} />}
+      </main>
 
       {isRememberedTheUser && isSetDate ||
         <ChoiceAge setAge={setDateHandler} setIsRememberedTheUserHandler={setIsRememberedTheUserHandler} />}

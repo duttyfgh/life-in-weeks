@@ -87,8 +87,8 @@ html {
 .checkbox.style-c .checkbox__checkmark:after {
   content: "";
   position: absolute;
-  left: 8px;
-  top: 4px;
+  left: 5px;
+  top: 1px;
   width: 5px;
   height: 10px;
   border: solid #ffffff;
@@ -105,9 +105,20 @@ html {
 }
 
 .borderRadiosForWeekTip {
-  border-radius: 8px  8px 8px 0; 
+  border-radius: 8px 8px 8px 0;
 }
 
 .tipText {
   line-height: 25px;
+}
+
+main {
+  display: flex;
+  justify-content: center;
+}
+
+@media(max-width: 1024px) {
+  main {
+    flex-direction: column;
+  }
 }

@@ -1,0 +1,60 @@
+.WeeksRowsWhenShowingPeriodsWeight {
+    width: 53.3%;
+    padding-bottom: 2.5rem;
+    justify-content: center;
+}
+
+.WeeksRowsWeight {
+    width: 62%;
+    padding-bottom: 2.5rem;
+    justify-content: flex-end;
+}
+
+.WeeksContainer {
+    width: 73.5rem;
+    height: 100vh;
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.25rem;
+
+    transform: scale(0.75);
+
+}
+
+@media(max-width: 1024px) {
+    .WeeksRowsWhenShowingPeriodsWeight,
+    .WeeksRowsWeight {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .WeeksContainer {
+        margin-top: -4.5rem;
+    }
+}
+
+@media(max-width: 550px) {
+    .WeeksContainer {
+        transform: scale(0.65);
+    }
+}
+
+
+@media(max-width: 440px) {
+    .WeeksContainer {
+        transform: scale(0.58);
+        margin-top: -12rem;
+    }
+    .WeeksRowsWhenShowingPeriodsWeight,
+    .WeeksRowsWeight {
+        padding-bottom: 1rem;
+    }
+}
+
+@media(max-width: 400px) {
+    .WeeksContainer {
+        transform: scale(0.5);
+    }
+}

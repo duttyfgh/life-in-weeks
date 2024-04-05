@@ -1,0 +1,44 @@
+.ButtonsContainer {
+    width: 23.3%;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+@media(max-width: 1024px) {
+    .ButtonsContainer {
+        width: 100%;
+        height: auto;
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+        font-size: 1.6rem;
+    }
+}
+
+@media(max-width: 1024px) {
+    .ButtonsContainer {
+        padding-top: 4rem;
+    }
+}
+
+@media(max-width: 786px) {
+    .ButtonsContainer {
+        padding-top: 4rem;
+    }
+}
+
+@media(max-width: 550px) {
+    .ButtonsContainer {
+        padding-top: 0;
+        margin-top: -4rem;
+    }
+}
+
+@media(max-width: 440px) {
+    .ButtonsContainer {
+        margin-top: -2rem;
+    }
+}
