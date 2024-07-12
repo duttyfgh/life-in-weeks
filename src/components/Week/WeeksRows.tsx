@@ -21,7 +21,7 @@ const WeeksRows = ({ rows, userWeeks, isShowingPeriods }: IWeeksRowsProps) => {
     }, [])
 
     if (!isReady) {
-        return <div className="absolute h-[100vh] w-full top-0 flex justify-center items-center bg-[#00000071] z-20">
+        return <div className="absolute h-[100vh] w-full top-0 flex justify-center items-center z-20">
             <img
                 src='https://media.tenor.com/wpSo-8CrXqUAAAAi/loading-loading-forever.gif'
                 alt="Loading..."
