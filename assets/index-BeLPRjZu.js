@@ -42,6 +42,7 @@ Error generating stack: `+o.message+`
             w-[10.5px] 
             h-[10.5px] 
             rounded 
+            Border
             ${r||e&&"bg-black"}
             ${r&&n<344&&"bg-[#ffe24f] Border"}
             ${r&&n<920&&n>343&&"bg-[#93ff55] Border"} 
